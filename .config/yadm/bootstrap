@@ -64,7 +64,9 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
-  brew unlink neovide
+  # eurkey
+  git clone --depth 1 https://github.com/jonasdiemer/EurKEY-Mac ~/Library/Keyboard\ Layouts/
+
   osascript -e 'tell application "Finder" to make alias file to POSIX file "/opt/homebrew/Cellar/neovide/0.10.1/Neovide.app" at POSIX file "/Applications"';
 fi
 
@@ -75,7 +77,7 @@ if ! command -v volta >/dev/null 2>&1; then
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
   volta install node@18
-  npm install -g vscode-html-language-server svelte-language-server
+  npm install -g vscode-html-language-server svelte-language-server vscode-langservers-extracted ls_emmet
 fi
 
 # install zsnap
