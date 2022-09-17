@@ -1,4 +1,5 @@
 # settings
+zstyle ':znap:*' repos-dir "$HOME/.zsh-plugins"
 REPORTTIME=3
 HISTFILE=~/.zhistory
 HISTSIZE=5000

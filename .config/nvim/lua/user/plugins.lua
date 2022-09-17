@@ -42,7 +42,7 @@ packer.init {
 return packer.startup(function(use)
   use { "wbthomason/packer.nvim", commit = "00ec5adef58c5ff9a07f11f45903b9dbbaa1b422" } -- Have packer manage itself
   use { "nvim-lua/plenary.nvim", commit = "968a4b9afec0c633bc369662e78f8c5db0eba249" } -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs", commit = "fa6876f832ea1b71801c4e481d8feca9a36215ec" } -- Autopairs, integrates with both cmp and treesitter
+  use { "windwp/nvim-autopairs", commit = "14cc2a4fc6243152ba085cc2059834113496c60a" } -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim", commit = "2c26a00f32b190390b664e56e32fd5347613b9e2" }
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "88343753dbe81c227a1c1fd2c8d764afb8d36269" }
   use { "kyazdani42/nvim-web-devicons", commit = "8d2c5337f0a2d0a17de8e751876eeb192b32310e" }
@@ -79,7 +79,6 @@ return packer.startup(function(use)
 
   -- Telescope
   use { "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" }
-  use { "nvim-telescope/telescope-project.nvim", commit = "91e9a9737b8522b5a4ecbd8464504da35a1e96cd" }
   use { "nvim-telescope/telescope-file-browser.nvim", commit = "60bcf4e70ecb9392445c2a2205ee8181dff964d5" }
 
   -- Treesitter

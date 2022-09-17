@@ -30,20 +30,7 @@ telescope.setup {
       -- disables netrw to use telescope-file-browser
       hijack_netrw = true,
     },
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true,
-      case_mode = "smart_case",
-    },
-    project = {
-      base_dirs = {
-        "~/Projects"
-      },
-    },
   },
 }
 
 telescope.load_extension "file_browser"
-telescope.load_extension "fzf"
-telescope.load_extension "project"

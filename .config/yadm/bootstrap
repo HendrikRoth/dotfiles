@@ -55,6 +55,7 @@ if [ "$system_type" = "Darwin" ]; then
   if ! command -v brew >/dev/null 2>&1; then
     echo "Installing homebrew (mac package manager)"
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
   # install brew packages
@@ -62,12 +63,19 @@ if [ "$system_type" = "Darwin" ]; then
     echo "Updating homebrew bundle"
     brew bundle --global
   fi
+
+  brew unlink neovide
+  osascript -e 'tell application "Finder" to make alias file to POSIX file "/opt/homebrew/Cellar/neovide/0.10.1/Neovide.app" at POSIX file "/Applications"';
 fi
 
 # install volta
 if ! command -v volta >/dev/null 2>&1; then
   echo "Installing volta (node package manager)"
   /usr/bin/ruby -e "$(curl https://get.volta.sh | bash)"
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+  volta install node@18
+  npm install -g vscode-html-language-server svelte-language-server
 fi
 
 # install zsnap

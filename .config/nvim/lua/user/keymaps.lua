@@ -41,6 +41,9 @@ keymap("n", "-", "<C-x>", opts)
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G", opts)
 
+-- Close buffer
+keymap("n", "<leader>q", ":bd<CR>", opts)
+
 
 -- Visual mode --
 
@@ -71,13 +74,13 @@ keymap("n", "<leader>gc", ":Neogit commit<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader><Space>", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>f", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>p", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>h", ":Telescope help_tags<CR>", opts)
-keymap("n", "<leader>o", ":Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>c", ":Telescope commands<CR>", opts)
-keymap("n", "<leader>b", ":Telescope file_browser<CR>", opts)
+keymap("n", "<leader>ff", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
+keymap("n", "<leader>fo", ":Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>fc", ":Telescope commands<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
 
 -- ToggleTerm
 keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
