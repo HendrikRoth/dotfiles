@@ -1,0 +1,81 @@
+#!/bin/sh
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Darwin" ]; then
+  ## dock settings
+  # faster dock, removed hide/show delay
+  defaults write com.apple.dock autohide-delay -float 0
+  defaults write com.apple.dock autohide-time-modifier -float 0.5
+
+  # dock icon size
+  defaults write com.apple.dock "tilesize" -int "42"
+
+  # autohide dock
+  defaults write com.apple.dock "autohide" -bool "true"
+
+  # do now show recent apps in dock
+  defaults write com.apple.dock "show-recents" -bool "false"
+
+  # remove genie effect on minimize
+  defaults write com.apple.dock "mineffect" -string "scale"
+
+  ## finder
+  # show extensions
+  defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+  # show path bar
+  defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+  # column view
+  defaults write com.apple.finder "FXPreferredViewStyle" -string "clmv"
+
+  # empty bin after 30 days
+  defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true"
+
+  # remove dialog for changing file extensions
+  defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+  # save to disk (not icloud)
+  defaults write NSGlobalDomain "NSDocumentSaveNewDocumentsToCloud" -bool "false"
+
+  # remove toolbar title rollover delay
+  defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0"
+
+  ## mail
+  # just copy email address in macos mail
+  defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+  # apply changes
+  echo "Applying macos defaults"
+  killall Dock
+  killall Finder
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew (mac package manager)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  # install brew packages
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+fi
+
+# install volta
+if ! command -v volta >/dev/null 2>&1; then
+  echo "Installing volta (node package manager)"
+  /usr/bin/ruby -e "$(curl https://get.volta.sh | bash)"
+fi
+
+# install zsnap
+if [ ! -d "$HOME/.zsnap" ]; then
+  echo "Downloading zsnap (zsh package manager)"
+  git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/.zsnap
+fi
+
+# update/install nvim packages
+echo "Updating/installing nvim packages"
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
