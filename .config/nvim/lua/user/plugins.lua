@@ -67,8 +67,8 @@ return packer.startup(function(use)
   use { "ray-x/lsp_signature.nvim", requires = { "nvim-lspconfig", "mason.nvim" }, commit = "e65a63858771db3f086c8d904ff5f80705fd962b" }
 
   -- Syntax highlighting
-  use { "nvim-treesitter/nvim-treesitter", event = { "BufRead", "BufNewFile" }, run = ":TSUpdate", commit = "" }
-  use { "p00f/nvim-ts-rainbow", after = "nvim-treesitter", commit = "" }
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", commit = "539bed2f4418f193618994b198c70f36212501f0" }
+  use { "p00f/nvim-ts-rainbow", after = "nvim-treesitter", commit = "fad8badcd9baa4deb2cf2a5376ab412a1ba41797" }
 
   -- Formatting and linting
   use { "jose-elias-alvarez/null-ls.nvim", commit = "fb2c4701f29dd60f003c6e5d3db1ff606d65907f" }
