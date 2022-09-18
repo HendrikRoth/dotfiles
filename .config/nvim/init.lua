@@ -15,7 +15,6 @@ for _, source in ipairs {
   "user.statusline",
   "user.colorizer",
   "user.linting",
-  "user.formatting",
   "user.terminal",
   "user.escape",
   "user.cmp",

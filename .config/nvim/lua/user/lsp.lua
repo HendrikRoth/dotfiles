@@ -1,3 +1,6 @@
+local lspFormat = require("lsp-format")
+local cmpLsp = require("cmp_nvim_lsp")
+
 local mason_options = {
   ui = {
     icons = {
@@ -24,9 +27,10 @@ local signature_options = {
 
 require("mason").setup(mason_options)
 require("mason-lspconfig").setup(mason_lspconfig_options)
-require("lsp_signature").setup(signature_options)
+local lspSignature = require("lsp_signature")
+local lspConfig = require("lspconfig")
 
-require("lspconfig").jsonls.setup {
+lspConfig.jsonls.setup {
   settings = {
     json = {
       schemas = require("schemastore").json.schemas {
@@ -39,3 +43,23 @@ require("lspconfig").jsonls.setup {
     },
   },
 }
+
+local servers = { 'tsserver', 'svelte', 'gopls' }
+
+local on_attach = function(client, bufnr)
+  lspSignature.on_attach(signature_options, bufnr)
+  lspFormat.on_attach(client)
+end
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = cmpLsp.update_capabilities(capabilities)
+
+for _, lsp in ipairs(servers) do
+  lspConfig[lsp].setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 100
+    }
+  }
+end
