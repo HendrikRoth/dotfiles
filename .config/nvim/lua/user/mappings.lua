@@ -18,6 +18,7 @@ vim.g.mapleader = " "
 -- Normal mode --
 
 -- Window movement
+keymap("", "s", "", opts)
 keymap("n", "<leader>wh", "<C-w>h", opts)
 keymap("n", "<leader>wj", "<C-w>j", opts)
 keymap("n", "<leader>wk", "<C-w>k", opts)
@@ -26,13 +27,20 @@ keymap("", "sh", "<C-w>h", opts)
 keymap("", "sj", "<C-w>j", opts)
 keymap("", "sk", "<C-w>k", opts)
 keymap("", "sl", "<C-w>l", opts)
+keymap("", "sJ", ":resize -2<CR>", opts)
+keymap("", "sK", ":resize +2<CR>", opts)
+keymap("", "sH", ":vertical resize -2<CR>", opts)
+keymap("", "sL", ":vertical resize +2<CR>", opts)
 
 -- Window split
 keymap("n", "<leader>ws", ":split<CR>", opts)
 keymap("n", "<leader>wv", ":vsplit<CR>", opts)
+keymap("n", "sc", ":split<CR>", opts)
+keymap("n", "sv", ":vsplit<CR>", opts)
 
 -- Window close
 keymap("n", "<leader>wc", ":close<CR>", opts)
+keymap("n", "sx", ":close<CR>", opts)
 
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)
@@ -74,12 +82,12 @@ keymap("n", "<leader>gc", ":Neogit commit<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader><Space>", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ff", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
-keymap("n", "<leader>fo", ":Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>fc", ":Telescope commands<CR>", opts)
+keymap("n", "<leader>f", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>p", ":Telescope projects<CR>", opts)
+keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>h", ":Telescope help_tags<CR>", opts)
+keymap("n", "<leader>o", ":Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>c", ":Telescope commands<CR>", opts)
 
 -- ToggleTerm
 keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
