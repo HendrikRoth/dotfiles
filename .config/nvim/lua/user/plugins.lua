@@ -63,7 +63,7 @@ return packer.startup(function(use)
   -- LSP
   use { "neovim/nvim-lspconfig", commit = "51775b12cfbf1b6462c7b13cd020cc09e6767aea" }
   use { "williamboman/mason.nvim", commit = "d7eb2eeec566da6cfd1c61b1d7aa6fc592d1b296" }
-  use { "williamboman/mason-lspconfig.nvim", requires = { "nvim-lspconfig", "mason.nvim" }, after = { "mason.nvim", "nvim-lspconfig" }, commit = "b70dedab5ceb5f3f84c6bc9ceea013292a14f8dc" }
+  use { "williamboman/mason-lspconfig.nvim", requires = { "nvim-lspconfig", "mason.nvim" }, commit = "b70dedab5ceb5f3f84c6bc9ceea013292a14f8dc" }
   use { "ray-x/lsp_signature.nvim", requires = { "nvim-lspconfig", "mason.nvim" }, commit = "e65a63858771db3f086c8d904ff5f80705fd962b" }
 
   -- Syntax highlighting
@@ -82,10 +82,10 @@ return packer.startup(function(use)
   use { "ahmedkhalf/project.nvim", before = "telescope.nvim", commit = "090bb11ee7eb76ebb9d0be1c6060eac4f69a240f" }
 
   -- Completion
-  use { "hrsh7th/nvim-cmp", event = "InsertEnter", commit = "913eb8599816b0b71fe959693080917d8063b26a" }
+  use { "hrsh7th/nvim-cmp", commit = "913eb8599816b0b71fe959693080917d8063b26a" }
   use { "hrsh7th/cmp-buffer", after = "nvim-cmp", commit = "3022dbc9166796b644a841a02de8dd1cc1d311fa" }
   use { "hrsh7th/cmp-path", after = "nvim-cmp", commit = "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1" }
-  use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
+  use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" }
   use { "hrsh7th/cmp-cmdline", after = "nvim-cmp", commit = "c66c379915d68fb52ad5ad1195cdd4265a95ef1e" }
   use { "hrsh7th/cmp-emoji", after = "nvim-cmp", commit = "19075c36d5820253d32e2478b6aaf3734aeaafa0" }
   use { "hrsh7th/cmp-calc", after = "nvim-cmp", commit = "f7efc20768603bd9f9ae0ed073b1c129f63eb312" }
