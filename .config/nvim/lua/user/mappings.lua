@@ -52,6 +52,9 @@ keymap("n", "<C-a>", "gg<S-v>G", opts)
 -- Close buffer
 keymap("n", "<leader>q", ":bd<CR>", opts)
 
+-- Translations
+keymap("n", "<leader>T", ":Pantran<CR>", opts)
+
 
 -- Visual mode --
 

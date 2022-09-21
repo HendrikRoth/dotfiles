@@ -159,6 +159,9 @@ return packer.startup(function(use)
   -- Code runner
   use { "0x100101/lab.nvim", commit = "d46fc09b871dd5d855fda29eed6afea663b307ab" }
 
+  -- Translations
+  use { "potamides/pantran.nvim", commit = "2feb438aab4a994e8671502f03b8199b659728b8" }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
