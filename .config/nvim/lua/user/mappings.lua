@@ -52,9 +52,6 @@ keymap("n", "<C-a>", "gg<S-v>G", opts)
 -- Close buffer
 keymap("n", "<leader>q", ":bd<CR>", opts)
 
--- Translations
-keymap("n", "<leader>T", ":Pantran<CR>", opts)
-
 
 -- Visual mode --
 
@@ -98,3 +95,12 @@ keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
 keymap("n", "<leader>rr", ":Lab code run<CR>", opts)
 keymap("n", "<leader>rs", ":Lab code stop<CR>", opts)
 keymap("n", "<leader>rp", ":Lab code panel<CR>", opts)
+
+-- Translations
+local pantran = require("pantran")
+local pantran_opts = { noremap = true, silent = true, expr = true }
+keymap("n", "<leader>TT", ":Pantran<CR>", opts)
+keymap("n", "<leader>TR", pantran.motion_translate, pantran_opts)
+keymap("n", "<leader>TRR", function() return pantran.motion_translate() .. "_" end, pantran_opts)
+keymap("x", "<leader>TR", pantran.motion_translate, pantran_opts)
+
