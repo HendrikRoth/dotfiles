@@ -91,3 +91,8 @@ keymap("n", "<leader>c", ":Telescope commands<CR>", opts)
 
 -- ToggleTerm
 keymap("n", "<leader>t", ":ToggleTerm<CR>", opts)
+
+-- Lab
+keymap("n", "<leader>rr", ":Lab code run<CR>", opts)
+keymap("n", "<leader>rs", ":Lab code stop<CR>", opts)
+keymap("n", "<leader>rp", ":Lab code panel<CR>", opts)
