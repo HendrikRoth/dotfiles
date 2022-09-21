@@ -97,7 +97,7 @@ return packer.startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
 
   -- GIT
-  use { "lewis6991/gitsigns.nvim", event = "BufEnter", commit = "231fa923fbc2797eef92b24860ab882cebf645b2" }
+  use { "lewis6991/gitsigns.nvim", commit = "231fa923fbc2797eef92b24860ab882cebf645b2" }
   use { "TimUntersberger/neogit", commit = "64245bb7f577bad0308d77dc1116ce7d8428f27f" }
 
   -- Dashboard
@@ -138,7 +138,7 @@ return packer.startup(function(use)
   use { "b0o/SchemaStore.nvim", commit = "a5fbd83d2b9b778518203e25167c05580add6b31" }
 
   -- Remove escaping delay
-  use { "max397574/better-escape.nvim", event = "InsertCharPre", commit = "d5ee0cef56a7e41a86048c14f25e964876ac20c1" }
+  use { "max397574/better-escape.nvim", commit = "d5ee0cef56a7e41a86048c14f25e964876ac20c1" }
 
   -- Snippets
   use { "L3MON4D3/LuaSnip", commit = "d049b3dbefee5d0a6d0bfbd913dfaa89ded0457f" }
@@ -155,6 +155,9 @@ return packer.startup(function(use)
 
   -- Tab through open buffers
   use { "ghillb/cybu.nvim", commit = "43b68850ac370c583e95ff136f65b144859470dc" }
+
+  -- Code runner
+  use { "0x100101/lab.nvim", commit = "d46fc09b871dd5d855fda29eed6afea663b307ab" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
