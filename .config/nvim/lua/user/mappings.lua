@@ -76,12 +76,11 @@ keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewis
 keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
 
 -- Git
-keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 keymap("n", "<leader>gs", ":Neogit<CR>", opts)
 keymap("n", "<leader>gc", ":Neogit commit<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader><Space>", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader><Space>", require("user.fzf").find_project_files, opts)
 keymap("n", "<leader>f", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>p", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers<CR>", opts)
