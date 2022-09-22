@@ -161,6 +161,9 @@ return packer.startup(function(use)
 
   -- Translations
   use { "potamides/pantran.nvim", commit = "2feb438aab4a994e8671502f03b8199b659728b8" }
+  
+  -- Automatically create a folder
+  use { 'jghauser/mkdir.nvim', event = "BufWritePre", commit = "c55d1dee4f099528a1853b28bb28caa802eba217" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
