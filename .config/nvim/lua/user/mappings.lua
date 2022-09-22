@@ -71,10 +71,6 @@ keymap("i", "jk", "<ESC>", opts)
 
 -- Plugins --
 
--- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
-
 -- Git
 keymap("n", "<leader>gs", ":Neogit<CR>", opts)
 keymap("n", "<leader>gc", ":Neogit commit<CR>", opts)
