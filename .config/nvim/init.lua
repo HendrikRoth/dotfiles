@@ -5,6 +5,7 @@ for _, source in ipairs {
   "user.options",
   "user.plugins",
   "user.mappings",
+  "user.autocmds",
 
   "user.autopairs",
   "user.cmp",
