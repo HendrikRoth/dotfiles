@@ -29,7 +29,7 @@ local options = {
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4)),
     ["<C-e>"] = cmp.mapping(cmp.mapping.abort()),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete()),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
   }
 }
 
