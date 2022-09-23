@@ -103,8 +103,9 @@ return packer.startup(function(use)
   -- Dashboard
   use { "goolord/alpha-nvim", commit = "0bb6fc0646bcd1cdb4639737a1cee8d6e08bcc31" }
 
-  -- Color highlighting
+  -- Color highlighing and tools
   use { "norcalli/nvim-colorizer.lua", commit = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6" }
+  use { "nvim-colortils/colortils.nvim", commit = "00baa1ec60be94bc52b0fed32d2aa32f146cddfb" }
 
   -- Icons
   use { "kyazdani42/nvim-web-devicons", event = "VimEnter", commit = "2d02a56189e2bde11edd4712fea16f08a6656944" }

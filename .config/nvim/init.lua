@@ -10,6 +10,7 @@ for _, source in ipairs {
   "user.autopairs",
   "user.cmp",
   "user.colorizer",
+  "user.colortils",
   "user.comment",
   "user.dashboard",
   "user.escape",
