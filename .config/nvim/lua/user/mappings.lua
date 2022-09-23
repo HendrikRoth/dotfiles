@@ -100,3 +100,6 @@ keymap("n", "<leader>TR", pantran.motion_translate, pantran_opts)
 keymap("n", "<leader>TRR", function() return pantran.motion_translate() .. "_" end, pantran_opts)
 keymap("x", "<leader>TR", pantran.motion_translate, pantran_opts)
 
+-- Colortils
+keymap("n", "<leader>cp", ":Colortils picker", opts)
+keymap("n", "<leader>cg", ":Colortils gradient", opts)
